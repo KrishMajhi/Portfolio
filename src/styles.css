@@ -1,0 +1,113 @@
+/* ─── Google Fonts ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ─── CSS Variables ─────────────────────────────────────────── */
+:root {
+  --black: #0a0a0a;
+  --off-black: #111111;
+  --dark: #1a1a1a;
+  --mid: #333333;
+  --muted: #888888;
+  --light: #cccccc;
+  --lighter: #e8e8e8;
+  --white: #f9f9f9;
+  --pure: #ffffff;
+  --border: rgba(255, 255, 255, 0.08);
+
+  /* ── CHANGE ACCENT COLOR HERE if you want a pop of color ── */
+  --accent: #ffffff;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Shared Section Styles ─────────────────────────────────── */
+.section { padding: 5rem 5vw; }
+.section--dark { background: var(--off-black); }
+
+.section-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: var(--muted);
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 600;
+  color: var(--pure);
+  margin-bottom: 2.5rem;
+}
+
+.divider {
+  border: none;
+  border-top: 0.5px solid var(--border);
+  margin: 0 5vw;
+}
+
+/* ─── Buttons ────────────────────────────────────────────────── */
+.btn-primary {
+  background: var(--pure);
+  color: var(--black);
+  padding: 0.75rem 1.75rem;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: background 0.2s, transform 0.15s;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover { background: var(--lighter); transform: translateY(-1px); }
+
+.btn-outline {
+  border: 0.5px solid rgba(255, 255, 255, 0.35);
+  color: var(--white);
+  padding: 0.75rem 1.75rem;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: inline-block;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.btn-outline:hover { border-color: var(--pure); transform: translateY(-1px); }
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hide-mobile { display: none !important; }
+}

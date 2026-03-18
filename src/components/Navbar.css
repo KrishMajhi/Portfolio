@@ -1,0 +1,88 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 5vw;
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid transparent;
+  transition: border-color 0.3s, background 0.3s;
+}
+.navbar--scrolled {
+  background: rgba(10, 10, 10, 0.92);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.navbar__logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.01em;
+  user-select: none;
+}
+
+.navbar__links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.navbar__links a {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #888;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.navbar__links a:hover { color: #fff; }
+
+/* ── Hamburger ── */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.navbar__hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: #fff;
+  border-radius: 2px;
+  transition: opacity 0.2s;
+}
+
+/* ── Mobile drawer ── */
+.navbar__drawer {
+  position: fixed;
+  top: 56px; left: 0; right: 0;
+  background: rgba(10, 10, 10, 0.97);
+  border-bottom: 0.5px solid rgba(255,255,255,0.08);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 5vw;
+  gap: 1.25rem;
+}
+.navbar__drawer a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ccc;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.navbar__drawer a:hover { color: #fff; }
+
+@media (max-width: 768px) {
+  .navbar__links  { display: none; }
+  .navbar__hamburger { display: flex; }
+}
