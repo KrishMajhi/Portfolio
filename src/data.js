@@ -158,7 +158,7 @@ export const CONTACT = {
     {
       icon: "in",
       label: "linkedin.com/in/krishmajhi", // ← replace with your LinkedIn
-      url: "https://linkedin.com/in/krishmajhi",
+      url: "https://linkedin.com/in/232322",
     },
   ],
 };
