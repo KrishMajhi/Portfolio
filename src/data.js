@@ -155,13 +155,13 @@ export const CONTACT = {
     },
     {
       icon: "GH",
-      label: "github.com/@example", // ← replace with your GitHub username
-      url: "https://github.com/@example",
+      label: "github.com/KrishMajhi", // ← replace with your GitHub username
+      url: "https://github.com/KrishMajhi",
     },
     {
       icon: "in",
-      label: "linkedin.com/in/@example", // ← replace with your LinkedIn
-      url: "https://linkedin.com/in/@example",
+      label: "linkedin.com/in/krish-majhi", // ← replace with your LinkedIn
+      url: "https://linkedin.com/in/krish-majhi",
     },
   ],
 };
