@@ -149,8 +149,8 @@ export const CONTACT = {
   links: [
     {
       icon: "@",
-      label: "krish@example.com", // ← replace with your email
-      url: "mailto:krish@example.com", // ← replace with your email
+      label: "krishmajhi9003@gmail.com", // ← replace with your email
+      url: "mailto:krishmajhi9003@gmail.com", // ← replace with your email
     },
     {
       icon: "GH",
