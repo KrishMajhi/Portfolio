@@ -4,6 +4,9 @@
 //  You should not need to touch any other file for content.
 // ============================================================
 
+
+// import myPhoto from './assets/code_cat.png'
+import myPhoto from './assets/pfp2.png'
 // ─── PERSONAL INFO ──────────────────────────────────────────
 export const PERSON = {
   // Your full name (used in Navbar logo, Hero, Footer)
@@ -29,7 +32,7 @@ export const PERSON = {
   //   import myPhoto from './assets/photo.jpg'   ← top of this file
   //   avatarUrl: myPhoto,
   // Option C – leave null to show initials instead
-  avatarUrl: null,
+  avatarUrl: myPhoto,
 
   // Initials shown when avatarUrl is null
   initials: "KM",

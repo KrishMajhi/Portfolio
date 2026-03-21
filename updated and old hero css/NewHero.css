@@ -1,0 +1,226 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 6rem 5vw 4rem;
+  gap: 4rem;
+  overflow: hidden;
+
+  /* ── Galaxy background ─────────────────────────────────────
+     Change the rgba colors below to shift the galaxy tones.
+     e.g. swap purple (120,40,200) for teal (0,180,160) for a
+     different galaxy mood.
+  ─────────────────────────────────────────────────────────── */
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(120, 40, 200, 0.10) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(60,  80, 200, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 60% 80%, rgba(180, 60, 120, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(20,  10,  40, 0.97) 0%, #0a0a0a 100%);
+}
+
+/* ── Static star field layer ────────────────────────────────
+   These are tiny pinprick highlights scattered across the hero.
+   Add more radial-gradient() lines to increase star density.
+─────────────────────────────────────────────────────────── */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at  8%  12%, rgba(255,255,255,0.55) 0%, transparent 100%),
+    radial-gradient(1px 1px at 18%  38%, rgba(255,255,255,0.40) 0%, transparent 100%),
+    radial-gradient(1px 1px at 28%   8%, rgba(255,255,255,0.60) 0%, transparent 100%),
+    radial-gradient(1px 1px at 38%  72%, rgba(255,255,255,0.30) 0%, transparent 100%),
+    radial-gradient(1px 1px at 48%  22%, rgba(255,255,255,0.50) 0%, transparent 100%),
+    radial-gradient(1px 1px at 58%  58%, rgba(255,255,255,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 68%  18%, rgba(255,255,255,0.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 78%  85%, rgba(255,255,255,0.40) 0%, transparent 100%),
+    radial-gradient(1px 1px at 88%  42%, rgba(255,255,255,0.55) 0%, transparent 100%),
+    radial-gradient(1px 1px at 95%  68%, rgba(255,255,255,0.30) 0%, transparent 100%),
+    radial-gradient(1px 1px at 12%  55%, rgba(255,255,255,0.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 22%  88%, rgba(255,255,255,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 32%  30%, rgba(255,255,255,0.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 42%  95%, rgba(255,255,255,0.40) 0%, transparent 100%),
+    radial-gradient(1px 1px at 52%   5%, rgba(255,255,255,0.60) 0%, transparent 100%),
+    radial-gradient(1px 1px at 62%  48%, rgba(255,255,255,0.20) 0%, transparent 100%),
+    radial-gradient(1px 1px at 72%  75%, rgba(255,255,255,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 82%  10%, rgba(255,255,255,0.50) 0%, transparent 100%),
+    radial-gradient(1px 1px at 92%  92%, rgba(255,255,255,0.30) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 5%  78%, rgba(255,255,255,0.20) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 45% 45%, rgba(255,255,255,0.15) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 75% 30%, rgba(255,255,255,0.18) 0%, transparent 100%),
+    radial-gradient(1px 1px at 15%  20%, rgba(180,140,255,0.30) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55%  80%, rgba(140,180,255,0.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85%  55%, rgba(255,140,200,0.20) 0%, transparent 100%);
+}
+
+/* canvas sits behind everything but above ::before star field */
+.hero__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* text and avatar sit above the canvas */
+.hero__content,
+.hero__right {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Eyebrow label ── */
+.hero__eyebrow {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.hero__eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: #888;
+}
+
+/* ── Name ── */
+.hero__name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Tagline ── */
+.hero__tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #888;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Bio description ── */
+.hero__desc {
+  font-size: 0.95rem;
+  color: #ccc;
+  max-width: 420px;
+  margin-bottom: 2rem;
+  line-height: 1.85;
+}
+
+/* ── CTA buttons ── */
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ── Avatar card (right column) ── */
+.hero__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__avatar-wrap {
+  position: relative;
+  width: 300px;
+  height: 360px;
+}
+
+.hero__avatar-ring {
+  position: absolute;
+  inset: 0;
+  border: 0.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50% 50% 48% 52% / 50% 48% 52% 50%;
+}
+.hero__avatar-ring2 {
+  position: absolute;
+  inset: 16px;
+  border: 0.5px solid rgba(255, 255, 255, 0.06);
+  border-radius: 48% 52% 50% 50% / 52% 50% 50% 48%;
+}
+
+/* ── Initials (when no photo is set) ── */
+.hero__avatar-initials {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.08);
+  letter-spacing: -0.02em;
+}
+
+/* ── Profile photo (when avatarUrl is set) ── */
+.hero__avatar-img {
+  position: absolute;
+  inset: 20px;
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  object-fit: cover;
+  border-radius: 50% 50% 48% 52% / 50% 48% 52% 50%;
+  /* ── CHANGE border radius here for a different photo shape ── */
+  /* border-radius: 50%;  ← perfect circle */
+  /* border-radius: 8px;  ← rounded rectangle */
+}
+
+/* ── Availability badge ── */
+.hero__badge {
+  position: absolute;
+  bottom: 0.5rem;
+  right: -1rem;
+  background: #111;
+  border: 0.5px solid rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #ccc;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+.hero__badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 7rem;
+  }
+  .hero__eyebrow  { justify-content: center; }
+  .hero__actions  { justify-content: center; }
+  .hero__desc     { margin-left: auto; margin-right: auto; }
+  .hero__right    { display: none; }
+}

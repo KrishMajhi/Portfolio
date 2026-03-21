@@ -1,4 +1,4 @@
-.hero {
+/* .hero {
   position: relative;
   min-height: 100vh;
   display: grid;
@@ -7,31 +7,93 @@
   padding: 6rem 5vw 4rem;
   gap: 4rem;
   overflow: hidden;
+  background:
+    radial-gradient(ellipse at 0% 0%,   rgba(255, 80, 120, 0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 100% 0%,  rgba(80, 120, 255, 0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(120, 60, 255, 0.20) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 50%,  rgba(0,  200, 255, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 60%,  rgba(255, 180, 0,  0.10) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 50%,  rgba(8,   4,  20, 0.97) 0%, #050508 100%);
 }
 
-/* canvas sits behind everything */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1.5px 1.5px at  5%  10%, rgba(255,255,255,0.90) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 12%  35%, rgba(255,255,255,0.70) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 20%   8%, rgba(255,255,255,1.00) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 28%  60%, rgba(255,255,255,0.65) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 35%  25%, rgba(255,255,255,0.85) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 42%  80%, rgba(255,255,255,0.55) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 50%  15%, rgba(255,255,255,1.00) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 58%  70%, rgba(255,255,255,0.60) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 65%  40%, rgba(255,255,255,0.80) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 72%  90%, rgba(255,255,255,0.55) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 80%  20%, rgba(255,255,255,1.00) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 88%  55%, rgba(255,255,255,0.70) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 95%  75%, rgba(255,255,255,0.85) 0%, transparent 100%),
+    radial-gradient(1px   1px   at  8%  85%, rgba(255,255,255,0.60) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 18%  50%, rgba(255,255,255,0.50) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 30%  95%, rgba(255,255,255,0.90) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 45%  45%, rgba(255,255,255,0.55) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 60%   5%, rgba(255,255,255,0.95) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 75%  65%, rgba(255,255,255,0.65) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 90%  30%, rgba(255,255,255,0.75) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 10%  20%, rgba(255, 140, 200, 0.90) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 25%  75%, rgba(140, 200, 255, 0.85) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 55%  30%, rgba(180, 140, 255, 0.90) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 70%  10%, rgba(255, 220, 100, 0.85) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 85%  85%, rgba(100, 255, 200, 0.90) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 40%  55%, rgba(255, 100, 100, 0.75) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 15%  90%, rgba(100, 180, 255, 0.80) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 92%   8%, rgba(255, 160, 80,  0.90) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 50%  95%, rgba(200, 100, 255, 0.75) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 78%  48%, rgba(80,  255, 180, 0.80) 0%, transparent 100%);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 600px 300px at 15% 40%, rgba(120, 60, 255, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 400px at 85% 60%, rgba(0, 180, 255, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 200px at 50% 90%, rgba(255, 80, 160, 0.05) 0%, transparent 70%);
+  animation: nebula 12s ease-in-out infinite alternate;
+}
+
+@keyframes nebula {
+  0%   { opacity: 0.6; transform: scale(1)    rotate(0deg); }
+  50%  { opacity: 1.0; transform: scale(1.04) rotate(1deg); }
+  100% { opacity: 0.7; transform: scale(0.98) rotate(-1deg); }
+}
+
 .hero__canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
-}
-
-/* text and avatar sit above the canvas */
-.hero__content,
-.hero__right {
-  position: relative;
   z-index: 1;
 }
 
-/* ── Eyebrow label ── */
+.hero__content,
+.hero__right {
+  position: relative;
+  z-index: 2;
+}
+
 .hero__eyebrow {
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #888;
+  color: rgba(255,255,255,0.55);
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
@@ -42,10 +104,9 @@
   display: inline-block;
   width: 28px;
   height: 1px;
-  background: #888;
+  background: linear-gradient(90deg, rgba(180,140,255,0.8), rgba(80,180,255,0.8));
 }
 
-/* ── Name ── */
 .hero__name {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.8rem, 5vw, 4.2rem);
@@ -53,35 +114,37 @@
   line-height: 1.05;
   color: #fff;
   margin-bottom: 0.5rem;
+  text-shadow:
+    0 0 40px rgba(180, 140, 255, 0.4),
+    0 0 80px rgba(80, 180, 255, 0.2);
 }
 
-/* ── Tagline ── */
 .hero__tagline {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1rem, 2vw, 1.35rem);
   font-weight: 400;
   font-style: italic;
-  color: #888;
+  background: linear-gradient(90deg, rgba(180,140,255,0.9), rgba(80,200,255,0.9), rgba(255,120,180,0.9));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 1.5rem;
 }
 
-/* ── Bio description ── */
 .hero__desc {
   font-size: 0.95rem;
-  color: #ccc;
+  color: rgba(255,255,255,0.65);
   max-width: 420px;
   margin-bottom: 2rem;
   line-height: 1.85;
 }
 
-/* ── CTA buttons ── */
 .hero__actions {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-/* ── Avatar card (right column) ── */
 .hero__right {
   display: flex;
   justify-content: center;
@@ -97,17 +160,18 @@
 .hero__avatar-ring {
   position: absolute;
   inset: 0;
-  border: 0.5px solid rgba(255, 255, 255, 0.12);
+  border: 0.5px solid rgba(180, 140, 255, 0.25);
   border-radius: 50% 50% 48% 52% / 50% 48% 52% 50%;
+  box-shadow: 0 0 30px rgba(120, 80, 255, 0.12), inset 0 0 30px rgba(120, 80, 255, 0.05);
 }
 .hero__avatar-ring2 {
   position: absolute;
   inset: 16px;
-  border: 0.5px solid rgba(255, 255, 255, 0.06);
+  border: 0.5px solid rgba(80, 200, 255, 0.15);
   border-radius: 48% 52% 50% 50% / 52% 50% 50% 48%;
+  box-shadow: 0 0 20px rgba(0, 180, 255, 0.08);
 }
 
-/* ── Initials (when no photo is set) ── */
 .hero__avatar-initials {
   position: absolute;
   inset: 0;
@@ -117,11 +181,13 @@
   font-family: 'Playfair Display', serif;
   font-size: 5rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(180,140,255,0.15), rgba(80,200,255,0.15));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   letter-spacing: -0.02em;
 }
 
-/* ── Profile photo (when avatarUrl is set) ── */
 .hero__avatar-img {
   position: absolute;
   inset: 20px;
@@ -129,41 +195,39 @@
   height: calc(100% - 40px);
   object-fit: cover;
   border-radius: 50% 50% 48% 52% / 50% 48% 52% 50%;
-  /* ── CHANGE border radius here for a different photo shape ── */
-  /* border-radius: 50%;  ← perfect circle */
-  /* border-radius: 8px;  ← rounded rectangle */
 }
 
-/* ── Availability badge ── */
 .hero__badge {
   position: absolute;
   bottom: 0.5rem;
   right: -1rem;
-  background: #111;
-  border: 0.5px solid rgba(255, 255, 255, 0.18);
+  background: rgba(10, 6, 30, 0.85);
+  border: 0.5px solid rgba(180, 140, 255, 0.30);
   border-radius: 4px;
   padding: 0.6rem 1rem;
   font-size: 0.78rem;
   font-weight: 500;
-  color: #ccc;
+  color: rgba(255,255,255,0.80);
   display: flex;
   align-items: center;
   gap: 0.5rem;
   white-space: nowrap;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba(120, 80, 255, 0.15);
 }
 .hero__badge-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #fff;
+  background: linear-gradient(135deg, #a78bfa, #60d0ff);
   animation: pulse 2s infinite;
+  box-shadow: 0 0 8px rgba(167, 139, 250, 0.8);
 }
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.3; }
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
 }
 
-/* ── Responsive ── */
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
@@ -174,4 +238,311 @@
   .hero__actions  { justify-content: center; }
   .hero__desc     { margin-left: auto; margin-right: auto; }
   .hero__right    { display: none; }
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 6rem 5vw 4rem;
+  gap: 4rem;
+  overflow: hidden;
+  user-select: none;
+  background:
+    radial-gradient(ellipse at   0%   0%, rgba(255,  80, 120, 0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 100%   0%, rgba( 80, 120, 255, 0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at  50% 100%, rgba(120,  60, 255, 0.20) 0%, transparent 55%),
+    radial-gradient(ellipse at  80%  50%, rgba(  0, 200, 255, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at  20%  60%, rgba(255, 180,   0, 0.10) 0%, transparent 45%),
+    radial-gradient(ellipse at  50%  50%, rgba(  8,   4,  20, 0.97) 0%, #050508 100%);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1.5px 1.5px at  5%  10%, rgba(255,255,255,0.90) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 12%  35%, rgba(255,255,255,0.70) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 20%   8%, rgba(255,255,255,1.00) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 28%  60%, rgba(255,255,255,0.65) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 35%  25%, rgba(255,255,255,0.85) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 42%  80%, rgba(255,255,255,0.55) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 50%  15%, rgba(255,255,255,1.00) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 58%  70%, rgba(255,255,255,0.60) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 65%  40%, rgba(255,255,255,0.80) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 72%  90%, rgba(255,255,255,0.55) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 80%  20%, rgba(255,255,255,1.00) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 88%  55%, rgba(255,255,255,0.70) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 95%  75%, rgba(255,255,255,0.85) 0%, transparent 100%),
+    radial-gradient(1px   1px   at  8%  85%, rgba(255,255,255,0.60) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 18%  50%, rgba(255,255,255,0.50) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 30%  95%, rgba(255,255,255,0.90) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 45%  45%, rgba(255,255,255,0.55) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 60%   5%, rgba(255,255,255,0.95) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 75%  65%, rgba(255,255,255,0.65) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 90%  30%, rgba(255,255,255,0.75) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 10%  20%, rgba(255, 140, 200, 0.90) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 25%  75%, rgba(140, 200, 255, 0.85) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 55%  30%, rgba(180, 140, 255, 0.90) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 70%  10%, rgba(255, 220, 100, 0.85) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 85%  85%, rgba(100, 255, 200, 0.90) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 40%  55%, rgba(255, 100, 100, 0.75) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 15%  90%, rgba(100, 180, 255, 0.80) 0%, transparent 100%),
+    radial-gradient(2px   2px   at 92%   8%, rgba(255, 160,  80, 0.90) 0%, transparent 100%),
+    radial-gradient(1px   1px   at 50%  95%, rgba(200, 100, 255, 0.75) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 78%  48%, rgba( 80, 255, 180, 0.80) 0%, transparent 100%);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 600px 300px at 15% 40%, rgba(120,  60, 255, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 400px at 85% 60%, rgba(  0, 180, 255, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 200px at 50% 90%, rgba(255,  80, 160, 0.05) 0%, transparent 70%);
+  animation: nebula 12s ease-in-out infinite alternate;
+}
+
+@keyframes nebula {
+  0%   { opacity: 0.6; transform: scale(1)    rotate(0deg); }
+  50%  { opacity: 1.0; transform: scale(1.04) rotate(1deg); }
+  100% { opacity: 0.7; transform: scale(0.98) rotate(-1deg); }
+}
+
+.hero__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  cursor: crosshair;
+}
+
+.hero__content,
+.hero__right {
+  position: relative;
+  z-index: 2;
+}
+
+.hero__eyebrow {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.hero__eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(180,140,255,0.8), rgba(80,180,255,0.8));
+}
+
+.hero__name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  text-shadow:
+    0 0 40px rgba(180, 140, 255, 0.4),
+    0 0 80px rgba(80, 180, 255, 0.2);
+}
+
+.hero__tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 400;
+  font-style: italic;
+  background: linear-gradient(90deg,
+    rgba(180,140,255,0.9),
+    rgba(80,200,255,0.9),
+    rgba(255,120,180,0.9)
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+  margin-bottom: 1.5rem;
+}
+@keyframes shimmer {
+  0%   { background-position:   0% center; }
+  100% { background-position: 200% center; }
+}
+
+.hero__desc {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.65);
+  max-width: 420px;
+  margin-bottom: 2rem;
+  line-height: 1.85;
+}
+
+.hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.hero__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ── Avatar wrap ─────────────────────────────────────────── */
+.hero__avatar-wrap {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Blob — solid dark gradient, no glow/blur ───────────── */
+.hero__blob {
+  position: absolute;
+  width: 310px;
+  height: 310px;
+  border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%;
+  /* dark, moody gradient — no bright colors, no bloom */
+  background: linear-gradient(135deg,
+    #1a0533,
+    #0d1f3c,
+    #0a2a1f,
+    #1c0f2e
+  );
+  animation: blob-morph 9s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* ── Blob border ring — subtle, no glow ─────────────────── */
+.hero__blob-2 {
+  position: absolute;
+  width: 314px;
+  height: 314px;
+  border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%;
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  animation: blob-morph 9s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes blob-morph {
+  0%   { border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%; transform: rotate(0deg)  scale(1);    }
+  25%  { border-radius: 42% 58% 60% 40% / 50% 55% 45% 50%; transform: rotate(5deg)  scale(1.04); }
+  50%  { border-radius: 55% 45% 38% 62% / 48% 62% 38% 52%; transform: rotate(-4deg) scale(0.97); }
+  75%  { border-radius: 48% 52% 55% 45% / 62% 40% 60% 38%; transform: rotate(6deg)  scale(1.03); }
+  100% { border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%; transform: rotate(0deg)  scale(1);    }
+}
+
+/* ── Picture frame — same morph, clips pic to blob shape ── */
+.hero__avatar-frame {
+  position: relative;
+  z-index: 1;
+  width: 270px;
+  height: 270px;
+  border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%;
+  animation: blob-morph 9s ease-in-out infinite;
+  overflow: hidden;
+  /* clean crisp border only, no shadow/glow */
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.hero__avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero__avatar-initials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.15);
+  letter-spacing: -0.02em;
+}
+
+/* ── Badge ───────────────────────────────────────────────── */
+.hero__badge {
+  position: absolute;
+  bottom: -0.5rem;
+  right: -1.5rem;
+  background: rgba(10, 6, 30, 0.88);
+  border: 0.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+.hero__badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.9;
+  animation: pulse-dot 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1);    opacity: 0.9; }
+  50%       { transform: scale(1.35); opacity: 0.5; }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 7rem;
+  }
+  .hero__eyebrow { justify-content: center; }
+  .hero__actions { justify-content: center; }
+  .hero__desc    { margin-left: auto; margin-right: auto; }
+  .hero__right   { display: none; }
 }

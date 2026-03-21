@@ -18,14 +18,14 @@ export default function About() {
           </div>
 
           {/* ── Stats — edit numbers/labels in data.js → ABOUT.stats ── */}
-          <div className="about__stats">
+          {/* <div className="about__stats">
             {ABOUT.stats.map((s, i) => (
               <div key={i} className="stat-card">
                 <div className="stat-card__num">{s.number}</div>
                 <div className="stat-card__label">{s.label}</div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
     </>
