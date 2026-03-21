@@ -4,9 +4,8 @@
 //  You should not need to touch any other file for content.
 // ============================================================
 
-
 // import myPhoto from './assets/code_cat.png'
-import myPhoto from './assets/pfp2.png'
+import myPhoto from "./assets/pfp2.png";
 // ─── PERSONAL INFO ──────────────────────────────────────────
 export const PERSON = {
   // Your full name (used in Navbar logo, Hero, Footer)
@@ -99,14 +98,14 @@ export const SKILL_GROUPS = [
 // Each project: tag, name, description, tech stack, links
 export const PROJECTS = [
   {
-    tag: "Web App",
-    name: "TaskFlow",
+    tag: "E-COMMERCE",
+    name: "Clothzy",
     description:
-      "A collaborative project management tool with real-time updates, role-based access control, and an intuitive drag-and-drop board interface.",
-    stack: ["React", "FastAPI", "PostgreSQL", "WebSockets"],
+      "A full-stack e-commerce platform with a dynamic frontend, global cart management, and a role-based backend for sellers and customers.",
+    stack: ["React", "FastAPI", "MySQL", "Context API"],
     // ── SET YOUR LINKS HERE ──────────────────────────────────
-    liveUrl: "#", // Replace '#' with your live demo URL
-    githubUrl: "#", // Replace '#' with your GitHub repo URL
+    liveUrl: "https://clothzy-one.vercel.app/", // Replace '#' with your live demo URL
+    githubUrl: "https://github.com/KrishMajhi/Clothzy-E-commerce-Platform-.git", // Replace '#' with your GitHub repo URL
     // Set either to null to hide that link
     // liveUrl: null,
     // githubUrl: null,
