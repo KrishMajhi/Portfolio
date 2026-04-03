@@ -6,6 +6,7 @@
 
 // import myPhoto from './assets/code_cat.png'
 import myPhoto from "./assets/pfp2.png";
+
 // ─── PERSONAL INFO ──────────────────────────────────────────
 export const PERSON = {
   // Your full name (used in Navbar logo, Hero, Footer)
@@ -15,22 +16,16 @@ export const PERSON = {
   role: "Full Stack Developer",
 
   // One-line italic tagline below your name
-  tagline: "Crafting seamless experiences, from pixel to API.",
+  tagline: "Building scalable web apps with clean architecture and real-world impact.",
 
   // 2–3 sentence bio shown in the hero section
   heroBio:
-    "I build elegant, high-performance web applications using React on the frontend and FastAPI on the backend — with a focus on clean architecture and delightful user experiences.",
+    "I build modern, high-performance web applications using React on the frontend and FastAPI on the backend. I focus on writing clean, maintainable code and creating seamless user experiences. Passionate about solving real-world problems through scalable and efficient solutions.",
 
   // Status badge shown on the avatar card (set to null to hide)
   availabilityBadge: "Open to opportunities",
 
   // ── PROFILE PICTURE ──────────────────────────────────────
-  // Option A – use a URL:
-  //   avatarUrl: 'https://your-image-hosting.com/photo.jpg',
-  // Option B – put your image in /src/assets/ and import it:
-  //   import myPhoto from './assets/photo.jpg'   ← top of this file
-  //   avatarUrl: myPhoto,
-  // Option C – leave null to show initials instead
   avatarUrl: myPhoto,
 
   // Initials shown when avatarUrl is null
@@ -38,7 +33,6 @@ export const PERSON = {
 };
 
 // ─── NAVIGATION LINKS ───────────────────────────────────────
-// Add / remove / reorder nav items here
 export const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
@@ -48,118 +42,101 @@ export const NAV_LINKS = [
 
 // ─── ABOUT SECTION ──────────────────────────────────────────
 export const ABOUT = {
-  // Array of paragraphs — add or remove as needed
   paragraphs: [
-    "Hi, I'm Krish — a passionate full-stack developer with a love for building products that solve real problems. I specialise in creating responsive, accessible frontends with React and robust, scalable backends with Python and FastAPI.",
-    "When I'm not coding, you'll find me exploring new frameworks, contributing to open source, or sketching out ideas for side projects. I believe that great software is both technically sound and a joy to use.",
-    "Currently available for freelance work and full-time opportunities.",
+    "Hi, I'm Krish — a passionate full-stack developer focused on building scalable and user-friendly applications. I specialise in creating responsive frontends with React and developing efficient backend systems using FastAPI.",
+
+    "I enjoy working on real-world projects that challenge my problem-solving skills and help me grow as a developer. My approach combines clean architecture, performance optimisation, and intuitive design.",
+
+    "Currently, I’m actively looking for freelance and full-time opportunities where I can contribute, learn, and build impactful products.",
   ],
 
-  // Stats shown to the right of the bio
   stats: [
-    { number: "15+", label: "Projects completed" },
-    { number: "3+", label: "Years experience" },
-    { number: "8+", label: "Happy clients" },
+    { number: "2+", label: "Major projects" },
+    { number: "3+", label: "Years learning & building" },
+    { number: "100%", label: "Focus on growth" },
   ],
 };
 
 // ─── SKILLS SECTION ─────────────────────────────────────────
-// Add groups or individual pills freely
 export const SKILL_GROUPS = [
   {
     heading: "Frontend",
     pills: [
-      "React",
-      "TypeScript",
-      "Next.js",
-      "Tailwind CSS",
-      "Redux",
-      "HTML / CSS",
+      "React.js",
+      "React Router",
+      "Redux Toolkit",
+      "Context API",
+      "HTML",
+      "CSS",
+      "JavaScript",
     ],
   },
   {
-    heading: "Backend",
+    heading: "Backend & Database",
     pills: [
       "Python",
       "FastAPI",
+      "MySQL",
       "REST APIs",
-      "SQLAlchemy",
-      "Pydantic",
-      "JWT Auth",
     ],
   },
   {
-    heading: "Tools & infra",
-    pills: ["PostgreSQL", "Docker", "Git / GitHub", "AWS", "Figma", "Linux"],
+    heading: "Tools",
+    pills: [
+      "Git",
+      "GitHub",
+      "Postman",
+      "VS Code",
+    ],
   },
 ];
 
 // ─── PROJECTS SECTION ───────────────────────────────────────
-// Each project: tag, name, description, tech stack, links
 export const PROJECTS = [
   {
     tag: "E-COMMERCE",
     name: "Clothzy",
     description:
-      "A full-stack e-commerce platform with a dynamic frontend, global cart management, and a role-based backend for sellers and customers.",
-    stack: ["React", "FastAPI", "MySQL", "Context API"],
-    // ── SET YOUR LINKS HERE ──────────────────────────────────
-    liveUrl: "https://clothzy-one.vercel.app/", // Replace '#' with your live demo URL
-    githubUrl: "https://github.com/KrishMajhi/Clothzy-E-commerce-Platform-.git", // Replace '#' with your GitHub repo URL
-    // Set either to null to hide that link
-    // liveUrl: null,
-    // githubUrl: null,
+      "A full-stack e-commerce platform featuring a dynamic React frontend with global cart state management using Context API. Includes product browsing, detailed views, and an in-progress FastAPI backend with role-based access control for sellers and customers.",
+
+    stack: ["React.js", "React Router", "Context API", "FastAPI", "MySQL"],
+
+    liveUrl: "https://clothzy-one.vercel.app/",
+    githubUrl:
+      "https://github.com/KrishMajhi/Clothzy-E-commerce-Platform-.git",
   },
   {
-    tag: "API + Dashboard",
-    name: "DataPulse",
+    tag: "FOOD ORDERING APP",
+    name: "EatEase",
     description:
-      "An analytics dashboard that ingests and visualises data from multiple sources, featuring customisable widgets and automated report generation.",
-    stack: ["React", "Python", "FastAPI", "Recharts"],
+      "A responsive multi-page food ordering application with restaurant listings, search, filtering, and real-time cart management using Redux Toolkit. Integrated external APIs for dynamic data fetching and implemented location-based search functionality.",
+
+    stack: ["React.js", "Redux Toolkit", "React Router DOM", "REST APIs"],
+
     liveUrl: "#",
     githubUrl: "#",
   },
-  {
-    tag: "E-Commerce",
-    name: "ShopNest",
-    description:
-      "A full-featured e-commerce platform with product search, cart management, payment integration, and an admin panel for order fulfilment.",
-    stack: ["Next.js", "FastAPI", "Stripe", "Docker"],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  // ── ADD MORE PROJECTS BELOW ──────────────────────────────
-  // {
-  //   tag: 'Mobile App',
-  //   name: 'My New Project',
-  //   description: 'Short description of what it does.',
-  //   stack: ['React Native', 'Node.js'],
-  //   liveUrl: 'https://myapp.com',
-  //   githubUrl: 'https://github.com/you/myapp',
-  // },
 ];
 
 // ─── CONTACT SECTION ────────────────────────────────────────
 export const CONTACT = {
-  // Intro text above the links
   intro:
-    "Have a project in mind or just want to say hello? I'd love to hear from you. Fill in the form or reach me directly via the links below.",
+    "Have a project in mind or just want to connect? Feel free to reach out — I'm always open to discussing new opportunities and ideas.",
 
-  // Social / contact links — set url to null to hide a link
   links: [
     {
       icon: "@",
-      label: "krishmajhi9003@gmail.com", // ← replace with your email
-      url: "mailto:krishmajhi9003@gmail.com", // ← replace with your email
+      label: "krishmajhi9003@gmail.com",
+      url: "mailto:krishmajhi9003@gmail.com",
     },
     {
       icon: "GH",
-      label: "github.com/KrishMajhi", // ← replace with your GitHub username
+      label: "github.com/KrishMajhi",
       url: "https://github.com/KrishMajhi",
     },
     {
       icon: "in",
-      label: "linkedin.com/in/krish-majhi", // ← replace with your LinkedIn
+      label: "linkedin.com/in/krish-majhi",
       url: "https://linkedin.com/in/krish-majhi",
     },
   ],
