@@ -2,13 +2,8 @@ import { useState } from 'react'
 import { CONTACT } from '../data'
 import './Contact.css'
 
-// ── CHANGE: paste your Formspree form ID here ─────────────
-// 1. Go to formspree.io → sign up with your Gmail
-// 2. Create a new form → copy the ID from the endpoint URL
-// e.g. if your endpoint is https://formspree.io/f/xyzabcde
-// then set FORMSPREE_ID = 'xyzabcde'
-const FORMSPREE_ID = 'YOUR_FORM_ID'
-// ──────────────────────────────────────────────────────────
+// ✅ FIXED: Your real Formspree ID
+const FORMSPREE_ID = 'mykbngwo'
 
 export default function Contact() {
   const [form, setForm]       = useState({ name: '', email: '', subject: '', message: '' })
@@ -16,26 +11,33 @@ export default function Contact() {
   const [loading, setLoading] = useState(false)
   const [error, setError]     = useState(null)
 
-  const handleChange = e =>
+  const handleChange = (e) =>
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
     setError(null)
 
     try {
       const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body:    JSON.stringify(form),
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(form),
       })
+
+      const data = await res.json()
+
       if (res.ok) {
         setSent(true)
+        setForm({ name: '', email: '', subject: '', message: '' }) // ✅ reset form
       } else {
-        setError('Something went wrong. Please try again.')
+        setError(data?.errors?.[0]?.message || 'Something went wrong. Please try again.')
       }
-    } catch {
+    } catch (err) {
       setError('Network error. Please try again.')
     } finally {
       setLoading(false)
@@ -79,37 +81,56 @@ export default function Contact() {
                   <div className="form-field">
                     <label htmlFor="cf-name">Name</label>
                     <input
-                      id="cf-name" name="name" type="text"
+                      id="cf-name"
+                      name="name"
+                      type="text"
                       placeholder="Your name"
-                      value={form.name} onChange={handleChange} required
+                      value={form.name}
+                      onChange={handleChange}
+                      required
                     />
                   </div>
+
                   <div className="form-field">
                     <label htmlFor="cf-email">Email</label>
                     <input
-                      id="cf-email" name="email" type="email"
+                      id="cf-email"
+                      name="email"
+                      type="email"
                       placeholder="your@email.com"
-                      value={form.email} onChange={handleChange} required
+                      value={form.email}
+                      onChange={handleChange}
+                      required
                     />
                   </div>
                 </div>
+
                 <div className="form-field">
                   <label htmlFor="cf-subject">Subject</label>
                   <input
-                    id="cf-subject" name="subject" type="text"
+                    id="cf-subject"
+                    name="subject"
+                    type="text"
                     placeholder="What's this about?"
-                    value={form.subject} onChange={handleChange}
+                    value={form.subject}
+                    onChange={handleChange}
                   />
                 </div>
+
                 <div className="form-field">
                   <label htmlFor="cf-message">Message</label>
                   <textarea
-                    id="cf-message" name="message"
+                    id="cf-message"
+                    name="message"
                     placeholder="Tell me about your project..."
-                    value={form.message} onChange={handleChange} required
+                    value={form.message}
+                    onChange={handleChange}
+                    required
                   />
                 </div>
+
                 {error && <p className="contact__error">{error}</p>}
+
                 <button type="submit" className="btn-primary" disabled={loading}>
                   {loading ? 'Sending...' : 'Send message'}
                 </button>
