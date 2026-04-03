@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { CONTACT } from '../data'
 import './Contact.css'
 
-// ✅ FIXED: Your real Formspree ID
+// ✅ Your real Formspree ID
 const FORMSPREE_ID = 'mykbngwo'
 
 export default function Contact() {
@@ -26,7 +26,11 @@ export default function Contact() {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
         },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...form,
+          _subject: `New message from ${form.name} (${form.email})`,
+          _replyto: form.email,
+        }),
       })
 
       const data = await res.json()
